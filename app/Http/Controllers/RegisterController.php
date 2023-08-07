@@ -44,6 +44,21 @@ class RegisterController extends Controller
             ]);
         }
     }
+    public function checkEmail($email)
+{
+    $existingUser = User::where('email', $email)->first();
+    if ($existingUser) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Email already registered'
+        ]);
+    } else {
+        return response()->json([
+            'status' => true,
+            'message' => 'Email is available'
+        ]);
+    }
+}
 
 
 }
