@@ -31,10 +31,11 @@ export default {
                     userId: localStorage.getItem("userId"),
                 })
                 .then((response) => {
+                    if (response.status == 200) {
                         this.item = "";
                         this.$emit("reloadItems");
                         console.log("reloadItems event emitted");
-
+                    }
                 })
                 .catch((error) => {
                     console.log(error);

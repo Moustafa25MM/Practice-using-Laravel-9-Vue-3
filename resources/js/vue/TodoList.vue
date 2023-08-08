@@ -22,9 +22,11 @@
       itemsList
     },
     data: function() {
-      return {
-        items: []
-      }
+        return {
+    newItem: {
+      name: []
+    }
+  }
     },
     methods: {
       getItems() {
