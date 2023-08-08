@@ -2,7 +2,7 @@
     <div class="app-container">
       <header class="header">
         <h1 class="title">List App</h1>
-        <item-form v-on:reloadItems="getItems()" />
+        <item-form v-on:reloadItems="getItems" />
       </header>
       <main class="main">
         <items-list :items="items" v-on:reloadItems="getItems()" />
@@ -28,12 +28,22 @@
     },
     methods: {
       getItems() {
-        axios.get('api/items')
+        console.log("getItems method called");
+        const userId = window.localStorage.getItem('userId');
+        console.log("User ID:", userId);
+        axios.get('api/items',{
+            params: {
+            userId: userId
+        }
+        })
           .then(response => {
-            this.items = response.data
+              console.log("Response:", response);
+              this.items = response.data
+              console.log("Items updated", this.items);
+
           })
           .catch(error => {
-            console.log(error);
+            console.log("Error:", error);
           });
       }
     },

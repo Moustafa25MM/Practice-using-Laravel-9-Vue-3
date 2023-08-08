@@ -44,11 +44,12 @@ class LoginController extends Controller
                if (Auth::attempt($credentials))
                {
                   return response()->json([ 'status' => true ,
-                                            'message' => "You Login Successfully"
+                                            'message' => "You Login Successfully",
+                                            'userId' => Auth::id()
                ]);
                }
                    return response()->json(['status' => false ,
-                                            'message' => "Invalid Email or Password"
+                                            'message' => "Invalid Email or Password",
 
                ]);
     }
