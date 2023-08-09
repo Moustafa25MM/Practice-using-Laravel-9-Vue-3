@@ -32,7 +32,7 @@ export default {
                 })
                 .then((response) => {
                     if (response.status == 200) {
-                        this.item = "";
+                        this.item.name = "";
                         this.$emit("reloadItems");
                         console.log("reloadItems event emitted");
                     }

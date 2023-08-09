@@ -23,7 +23,7 @@
     },
     data: function() {
         return {
-    newItem: {
+    items: {
       name: []
     }
   }

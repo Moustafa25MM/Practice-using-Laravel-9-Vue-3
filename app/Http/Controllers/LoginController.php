@@ -53,6 +53,10 @@ class LoginController extends Controller
 
                ]);
     }
+    public function logout() {
+        Auth::logout();
+        return response()->json(['status' => true, 'message' => "You've been logged out"]);
+      }
 
     /**
      * Display the specified resource.

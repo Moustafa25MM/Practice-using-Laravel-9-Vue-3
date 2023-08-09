@@ -14,6 +14,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/check-email/{email}', [RegisterController::class, 'checkEmail']);
 Route::post('/login', [LoginController::class, 'check']);
+Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/items',[ItemController::class, 'index']);
 Route::prefix('/item')->group( function() {

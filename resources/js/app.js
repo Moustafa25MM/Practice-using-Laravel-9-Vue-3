@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Welcome from './vue/Welcome.vue';
 import Register from './vue/Register.vue';
 import Login from './vue/Login.vue';
+import Logout from './vue/Logout.vue';
 import TodoList from './vue/TodoList.vue';
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
       name: 'Login',
       component: Login
     },
+    {
+        path: '/logout',
+        name: 'Logout',
+        component: Logout
+      },
     {
       path: '/todo',
       name: 'TodoList',
