@@ -5,7 +5,7 @@
             @change="toggleStatus()"
             v-model="item.completed"
         />
-        <span :class="[item.completed ? 'completed' : '', 'itemText']">
+        <span :class="[item.completed ? 'completed' : 'uncompleted', 'itemText']">
             {{ item.name }}
         </span>
         <button @click="removeItem()" class="deleteBtn">
@@ -113,6 +113,10 @@ import axios from 'axios';
       text-decoration: line-through;
       color: #999999;
   }
+  .uncompleted {
+    text-decoration: none;
+    color: #999999;
+}
 
   .itemText {
       width: 100%;
