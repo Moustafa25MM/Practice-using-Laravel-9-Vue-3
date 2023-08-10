@@ -54,11 +54,9 @@ class ItemController extends Controller
         $existingItem = Item::find($id);
         if ($existingItem) {
             if ($existingItem->completed) {
-                // Item was previously completed, so mark it as uncompleted
                 $existingItem->completed = false;
                 $existingItem->completed_at = null;
             } else {
-                // Item was previously uncompleted, so mark it as completed
                 $existingItem->completed = true;
                 $existingItem->completed_at = Carbon::now();
             }

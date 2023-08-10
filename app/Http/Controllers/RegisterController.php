@@ -11,10 +11,6 @@ use Exception;
 class RegisterController extends Controller
 {
 
-    public function create()
-    {
-        //
-    }
 
     public function store(Request $request)
     {
@@ -59,6 +55,5 @@ class RegisterController extends Controller
         ]);
     }
 }
-
 
 }
