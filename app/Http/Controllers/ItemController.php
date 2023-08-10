@@ -61,6 +61,17 @@ class ItemController extends Controller
 
         return response()->json(['error' => 'Item not found'], 404);
     }
+    public function updateName(Request $request, $id)
+{
+    $existingItem = Item::find($id);
+    if ($existingItem) {
+        $existingItem->name = $request->item['name'];
+        $existingItem->save();
+        return $existingItem;
+    }
+
+    return response()->json(['error' => 'Item not found'], 404);
+}
 
     public function destroy($id)
     {
